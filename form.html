@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			input,
+			select {
+				border: 0px;
+				outline: 0px;
+				border-bottom: 2px solid gray;
+				width: 40%;
+				padding: 10px;
+				margin: 24px;
+			}
+
+			input[type='button'] {
+				border: 2px solid gray;
+				padding: 4px;
+				width: 80%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Welcome!!</h1>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+			dicta!
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi
+			rem corporis? Dignissimos iusto non, dolorem eos cupiditate magni enim.
+		</p>
+		<h2>Please fill below form</h2>
+
+		<form action="" id="myform" name="myform">
+			<input type="text" name="name" placeholder="Name" />
+			<!-- <br /> -->
+			<input type="email" name="email" placeholder="Email" />
+			<input type="number" name="age" placeholder="Age" />
+			<input type="tel" name="number" placeholder="Number" />
+			<select name="favColor">
+				<option value="">--Select Any one--</option>
+				<option value="red">Red</option>
+				<option value="green">Green</option>
+				<option value="blue">Blue</option>
+			</select>
+
+			<br />
+			<input type="button" value="Input Click" onclick="getFormValues()" />
+			<!-- <button type="button" onclick="getFormValues()">Btn Click</button> -->
+			<!-- <button type="submit" onsubmit="getFormValues()">Btn Submit</button> -->
+		</form>
+
+		<script>
+			const getFormValues = () => {
+				const form = document.forms['myform']
+				// console.log('form---', form)
+				console.log(form['name'].value)
+				console.log(form['email'].value)
+				console.log(form['age'].value)
+				console.log(form['number'].value)
+				console.log(form['favColor'].value)
+				// alert(`Submitted. Thank you - ${form['name'].value}`)
+			}
+		</script>
+	</body>
+</html>

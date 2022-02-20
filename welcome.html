@@ -37,19 +37,19 @@
 	<body>
 		<div class="form-container">
 			<h2 class="form-name">Register</h2>
-			<form>
-				<label for="name">Name</label>
+			<form id="my-form">
+				<label for="userName">Name</label>
 				<input
 					type="text"
 					placeholder="Please Enter your name"
-					name="name"
+					name="userName"
 					required
 				/>
-				<label for="email">Email</label>
+				<label for="userEmail">Email</label>
 				<input
 					type="email"
 					placeholder="Please Enter email address"
-					name="email"
+					name="userEmail"
 					required
 				/>
 				<label for="phone">Phone Number</label>
@@ -85,8 +85,25 @@
 			</form>
 		</div>
 		<script>
+			window.onload = function load() {
+				console.log('hiii')
+				var myForm = document.getElementById('my-form')
+				myForm['userEmail'].value = localStorage.getItem('mail')
+				myForm['userName'].value = localStorage.getItem('nnn')
+			}
+
 			function registerUser() {
-				console.log(2 + 5)
+				// alert('Please confirm form submission')
+				// let mydiv = document.createElement('h2')
+				// mydiv.innerHTML = 'hello'
+				// mydiv.style.backgroundColor = 'red'
+				// document.getElementById('my-form').appendChild(mydiv)
+				var myForm = document.getElementById('my-form')
+				var userEmail = myForm['userEmail'].value
+				var userName = myForm['userName'].value
+
+				localStorage.setItem('mail', userEmail)
+				localStorage.setItem('nnn', myForm['userName'].value)
 			}
 		</script>
 	</body>
