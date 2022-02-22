@@ -1,0 +1,81 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-track {
+	background: #7e90df;
+}
+::-webkit-scrollbar-thumb {
+	background: rgb(118, 58, 214);
+	border-radius: 10px;
+	width: 40px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(98, 7, 245);
+}
+
+.calcFrame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+	height: min-content;
+	margin: 5vh auto;
+	background: rgb(238, 174, 202);
+	background: radial-gradient(
+		circle,
+		rgba(238, 174, 202, 1) 0%,
+		rgba(148, 187, 233, 1) 100%
+	);
+	border-radius: 5px;
+	box-shadow: 10px 10px 10px 8px rgb(80, 79, 79);
+}
+.screen {
+	margin-top: 20px;
+	width: 90%;
+	height: 100px;
+	border: 6px inset rgb(155, 153, 153);
+	overflow: auto;
+	font-size: 30px;
+	text-align: right;
+}
+
+.keys {
+	margin: 20px auto;
+	width: 90%;
+	height: 100%;
+}
+
+.btn {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 2px;
+	width: 60px;
+	height: 60px;
+	border-radius: 4px;
+	border: 6px outset rgb(145, 143, 143);
+	background: rgb(208, 214, 221);
+}
+
+.sm {
+	height: 40px;
+	font-size: 18px;
+}
+
+.btn:active {
+	color: #575857;
+	box-shadow: 2px 4px #666;
+	transform: translateY(2px);
+}
+
+.plus {
+	width: 128px;
+}
