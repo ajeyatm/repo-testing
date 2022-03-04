@@ -115,10 +115,6 @@ let cars = [
 let userAndCarInfo = []
 
 users.forEach((user) => {
-  //console.log(user)
-  //   console.log(userName, '---------')
-  //   console.log(carsOwnedByUser)
-
   let carDetails = cars.filter((car) => {
     return car.carId === user.carsOwned
   })
@@ -132,7 +128,26 @@ users.forEach((user) => {
   userAndCarInfo.push(newUserCarInfo)
 })
 
+for (let user of users) {
+  let carInfo
+
+  for (let car of cars) {
+    if (car.carId === user.carsOwned) {
+      carInfo = car
+    }
+  }
+
+  let newUserCarInfo = {
+    name: user.name,
+    city: user.city,
+    carsOwnedByUser: carInfo,
+  }
+
+  userAndCarInfo.push(newUserCarInfo)
+}
+
 console.log(userAndCarInfo)
+
 // let arr = [2, 5, 6, 8, 11]
 // let result = arr.filter((item) => {
 //   return item % 2 === 0
