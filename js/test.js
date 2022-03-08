@@ -12,7 +12,7 @@ let sqrtOfANumber = function () {
 }
 
 let sqrtOfANumberWithArrow = () => Math.sqrt(a)
-let sqrtOfANumberWithArrow = () => {
+let sqrtOfANumberWithArrow1 = () => {
   //operation1
   return Math.sqrt(a)
 }
