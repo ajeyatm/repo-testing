@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .text-red {
+        color: red;
+      }
+      .text-upper {
+        text-transform: uppercase;
+      }
+      #hshsh {
+        background-color: aqua;
+      }
+      /* .text-orange {
+        color: orange;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- <input placeholder="Enter your name" onchange="onInputChange()" />
+    <button onclick="submitform()">Submit</button> -->
+
+    <div class="text-red text-upper" id="hshsh">hello</div>
+    <p class="text-upper">jjjjjk</p>
+
+    <div class="text-orange">Welcome</div>
+    <div class="text-orange">ss</div>
+    <div class="text-orange">ssdddsd</div>
+    <div class="text-orange">wewew</div>
+
+    <div id="text-purple">Purple</div>
+
+    <script>
+      //event handlers- onmouseenter, onclick,onchange, onmouseover, etc
+      //event:
+      //   function submitform() {
+      //     alert('Form Submitted')
+      //   }
+      //   function onInputChange() {
+      //     console.log('hhh')
+      //   }
+
+      //   const divElem = document.getElementsByClassName('text-orange')
+      const divElem = document.querySelectorAll('.text-orange')
+
+      //   for (let ele of divElem) {
+      //     ele.style.color = 'white'
+      //     ele.style.backgroundColor = 'purple'
+      //     ele.innerText = 'this is from JS Script'
+      //     ele.style.textTransform = 'uppercase'
+      //   }
+
+      //   document.getElementById('text-purple').style.color = 'purple'
+      //====or
+      //   const ele = document.getElementById('text-purple')
+      const ele = document.querySelector('#text-purple')
+      //   ele.style.color = 'white'
+      //   ele.style.backgroundColor = 'purple'
+      //   ele.innerText = 'this is from JS Script'
+      //   ele.style.textTransform = 'uppercase'
+
+      //   for (let item of document.getElementsByTagName('p')) {
+      //     item.style.backgroundColor = 'yellow'
+      //   }
+      //target the elemt using one of methods available in document
+
+      let newEle = document.createElement('p')
+      newEle.innerText = 'Paragraph created from JS'
+      newEle.style.color = 'pink'
+
+      document.body.appendChild(newEle)
+      //   console.log(newEle)
+    </script>
+  </body>
+</html>
