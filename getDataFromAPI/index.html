@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Users</title>
+    <style>
+      .userLi > a {
+        display: block;
+      }
+      .userLi > img {
+        border-radius: 6px;
+      }
+      #user-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        /*Tablets [601px -> 1200px]*/
+        #user-container {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        /*Big smartphones [426px -> 600px]*/
+        #user-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media only screen and (max-width: 425px) {
+        /*Small smartphones [325px -> 425px]*/
+        #user-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ul id="user-container"></ul>
+    </div>
+
+    <script>
+      const container = document.getElementById('user-container')
+
+      //getting the data from api
+      fetch('https://api.github.com/users')
+        //converting the res to readable data
+        .then((data) => data.json())
+        //converted data
+        .then((finalRes) => {
+          //looping through the data
+          finalRes.forEach((user, userIndex) => {
+            //will create html tag li
+            let userLi = document.createElement('li')
+            userLi.style.listStyleType = 'none'
+            userLi.className = 'userLi'
+
+            let userImg = document.createElement('img')
+            userImg.src = user.avatar_url
+            userImg.style.width = '300px'
+
+            userLi.appendChild(userImg)
+
+            let userLogin = document.createElement('a')
+            //assigning content of li
+            userLogin.innerText = user.login
+            userLogin.href = user.html_url
+            userLogin.target = '_blank'
+            userLogin.style.textDecoration = 'none'
+            userLogin.style.color = 'black'
+            // <a href='https://github.com/mojombo' target='_blank'>mojombo</a>
+            userLi.appendChild(userLogin)
+
+            //attaching the generated li to the target
+            container.appendChild(userLi)
+          })
+        })
+        .catch((err) => {
+          console.log('Error---', err)
+        })
+    </script>
+  </body>
+</html>
